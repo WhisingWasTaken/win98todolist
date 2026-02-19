@@ -23,7 +23,7 @@ This is a really simple, but very useful project and I hope its helpful to you.
 I would really appreciate it!
 
 ## Getting Started
-Clone the repository update script.js with your firebase data and open'index.html'
+Clone the repository update script.js with your firebase data and open index.html
 
 ```bash
 git clone https://github.com/WhisingWasTaken/win98todolist.git
