@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Whising's Win98 To-do List!</title>
+  <link rel="stylesheet" href="https://unpkg.com/98.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="window todo-window">
+    <div class="title-bar">
+      <div class="title-bar-text">To-Do List</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+
+    <div class="window-body">
+      <div id="login-section">
+        <p>Please log in:</p>
+        <div class="login-buttons">
+          <button onclick="loginWithGoogle()">Login with Google</button>
+          <button onclick="showEmailLogin()">Login with Email</button>
+        </div>
+        <div id="email-login" style="display:none; margin-top:10px;">
+          <input type="text" id="email" placeholder="Email">
+          <input type="password" id="password" placeholder="Password">
+          <button onclick="loginWithEmail()">Submit</button>
+          <button onclick="signupWithEmail()">Sign Up</button>
+          <div id="login-error" class="error-text"></div>
+        </div>
+      </div>
+
+      <div id="todo-section" style="display:none; margin-top:20px;">
+        <h4>Your To-Do List</h4>
+        <div id="todo-list"></div>
+
+        <div style="margin-top:15px;">
+          <input type="text" id="new-heading" placeholder="Heading">
+          <input type="text" id="new-description" placeholder="Description">
+          <input type="color" id="new-color" value="#000000">
+          <button onclick="addTodo()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="taskbar">
+    <button id="start-btn">Start</button>
+    <div id="clock"></div>
+  </div>
+
+  <div id="start-menu" style="display:none;">
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <!-- Error Sound -->
+  <audio id="error-sound" src="error.mp3" preload="auto"></audio>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
