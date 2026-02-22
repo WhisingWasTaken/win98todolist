@@ -23,11 +23,11 @@ This is a really simple, but very useful project and I hope its helpful to you.
 I would really appreciate it!
 
 ## Getting Started
-Clone the repository update script.js with your firebase data and open index.html
+download the .crx file from releases, and change the extension to .zip
+then extract the files, and upload it to your browser's extension page.
 
 ```bash
 git clone https://github.com/WhisingWasTaken/win98todolist.git
 cd win98todolist
-update script.js with your firebase data
-open'index.html'
+upload the extensions folder to your browsers extensions page!
 
