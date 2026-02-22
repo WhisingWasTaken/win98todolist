@@ -7,13 +7,13 @@ import { getFirestore, collection, addDoc, getDocs, query, where, doc, deleteDoc
          from "https://www.gstatic.com/firebasejs/12.9.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB_traUkTp6iJs7pdfJZE_laCF224tj7D8",
-  authDomain: "fir-todolist-98.firebaseapp.com",
-  projectId: "fir-todolist-98",
-  storageBucket: "fir-todolist-98.appspot.com",
-  messagingSenderId: "969298221809",
-  appId: "1:969298221809:web:72c65e458c270d4d946750",
-  measurementId: "G-S7969YBM4X"
+  apiKey: "",
+  authDomain: "f",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: ""
 };
 
 const app = initializeApp(firebaseConfig);
@@ -174,3 +174,4 @@ document.getElementById("start-btn").addEventListener("click", () => {
 window.logout = async () => {
   await auth.signOut();
 };
+
