@@ -7,13 +7,13 @@ import { getFirestore, collection, addDoc, getDocs, query, where, doc, deleteDoc
          from "https://www.gstatic.com/firebasejs/12.9.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: "",
-  measurementId: ""
+  apiKey: "AIzaSyB_traUkTp6iJs7pdfJZE_laCF224tj7D8",
+  authDomain: "fir-todolist-98.firebaseapp.com",
+  projectId: "fir-todolist-98",
+  storageBucket: "fir-todolist-98.appspot.com",
+  messagingSenderId: "969298221809",
+  appId: "1:969298221809:web:72c65e458c270d4d946750",
+  measurementId: "G-S7969YBM4X"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -74,6 +74,24 @@ function showError(message) {
 window.addTodo = async () => {
   const user = auth.currentUser;
   if (!user) return alert("Not logged in");
+
+  const q = query(collection(db, "todos"), where("uid", "==", user.uid));
+  const snapshot = await getDocs(q);
+
+  if (snapshot.size >= 4) {
+    const sound = document.getElementById("error-sound");
+    sound.currentTime = 0;
+    sound.play();
+
+    const errorDiv = document.getElementById("max-limit");
+    errorDiv.textContent = "You can only add max 4 todos at a time.";
+
+    setTimeout(() => {
+      errorDiv.textContent = "";
+    }, 5000);
+
+    return;
+  }
 
   const heading = document.getElementById("new-heading").value;
   const description = document.getElementById("new-description").value;
@@ -148,7 +166,6 @@ setInterval(() => {
     now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 }, 1000);
 
-// Start menu toggle
 document.getElementById("start-btn").addEventListener("click", () => {
   const menu = document.getElementById("start-menu");
   menu.style.display = menu.style.display === "none" ? "block" : "none";
@@ -157,4 +174,3 @@ document.getElementById("start-btn").addEventListener("click", () => {
 window.logout = async () => {
   await auth.signOut();
 };
-

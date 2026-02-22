@@ -3,14 +3,15 @@ body {
   font-family: "MS Sans Serif", sans-serif;
   margin: 0;
   height: 100vh;
+  overflow-y: auto; 
 }
 
 .todo-window {
-  width: 400px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 95%;              
+  max-width: 400px;        
+  margin: 20px auto;       
+  position: relative;
+  transform: none;         
 }
 
 .todo-item {
@@ -90,4 +91,30 @@ body {
   color: red;
   font-size: 12px;
   margin-top: 5px;
+}
+
+@media (max-width: 350px) {
+  .todo-window {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border: none;
+  }
+  .todo-heading {
+    font-size: 14px;
+  }
+  .todo-description {
+    font-size: 11px;
+  }
+  .todo-time {
+    font-size: 10px;
+  }
+  #taskbar {
+    height: 30px;
+    font-size: 12px;
+  }
+  #start-menu {
+    width: 120px;
+    padding: 8px;
+  }
 }

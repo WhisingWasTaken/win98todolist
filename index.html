@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  
   <div class="window todo-window">
     <div class="title-bar">
       <div class="title-bar-text">To-Do List</div>
@@ -33,19 +34,19 @@
         </div>
       </div>
 
-      <div id="todo-section" style="display:none; margin-top:20px;">
-        <h4>Your To-Do List</h4>
-        <div id="todo-list"></div>
+    <div id="todo-section" style="display:none; margin-top:20px;">
+      <h4>Your To-Do List</h4>
+    <div id="max-limit" class="error-text"></div> 
+    <div id="todo-list"></div>
 
-        <div style="margin-top:15px;">
-          <input type="text" id="new-heading" placeholder="Heading">
-          <input type="text" id="new-description" placeholder="Description">
-          <input type="color" id="new-color" value="#000000">
-          <button onclick="addTodo()">Add</button>
-        </div>
-      </div>
+    <div style="margin-top:15px;">
+      <input type="text" id="new-heading" placeholder="Heading">
+      <input type="text" id="new-description" placeholder="Description">
+      <input type="color" id="new-color" value="#000000">
+        <button onclick="addTodo()">Add</button>
     </div>
   </div>
+
 
   <div id="taskbar">
     <button id="start-btn">Start</button>
